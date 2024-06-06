@@ -15,6 +15,8 @@ app.set('views', './views');
 
 const PORT = 3000;
 
+app.use(express.static(__dirname + '/public'));
+
 app.listen(PORT, function(){
     console.log(`Servidor rodando em: http://localhost/${PORT}`);
 });
@@ -28,4 +30,7 @@ db
         console.log('Erro ao conectar', err);
     });
 
-app.use('/', require('./routes/teste.js'));
+app.use('/', require('./routes/contato.js'));
+app.use('/', require('./routes/index.js'));
+app.use('/', require('./routes/produtos.js'));
+app.use('/', require('./routes/sobre.js'));

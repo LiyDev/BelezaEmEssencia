@@ -1,0 +1,30 @@
+<section class="pesquisa">
+    <div class="container__pesquisa">
+        <input type="search" placeholder="Insira o nome do produto" name="search" class="container__pesquisa-input">
+    </div>
+</section>
+
+<section class="produtos">
+    <div class="wrapper">
+        {{#each produtos}}
+        <div class="container__produto">    
+            <div class="container__produto-imagem ">
+                <img src="/{{dataValues.imgsource}}" class="imagens-produtos">
+            </div>
+            <div class="container__produto-texto">
+                <div class="produto__texto">
+                    <span class="produto__nome">{{dataValues.nome}}</span>
+                    <span class="produto__nome">{{dataValues.descricao}}</span>
+                    <span class="produto__preco">{{dataValues.preco}}</span>
+                </div>
+                <div class="produto__icones">
+                    <div class="produto__icones-favorito">
+                        <span></span>
+                    </div>
+                    <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
