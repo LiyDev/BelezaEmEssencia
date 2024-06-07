@@ -4,8 +4,7 @@ const Produto = require('../models/produtos');
 
 
 //buscando todos os alunos
-router.get("/produtos", (req, res)=>{
-
+router.get("/", (req, res)=>{
     Produto.findAll({order:[
         ['nome', 'ASC']
     ]})
@@ -16,11 +15,19 @@ router.get("/produtos", (req, res)=>{
     }); 
 });
 
-router.get('/addproduto', (req, res) => {
+router.get("/editar/:id", (req, res) => Produto.findOne({
+    where: {id: req.params.id}
+}).then(produto =>{
+    res.render('editarProduto', {
+        produto
+    });
+}).catch(err => console.log(err)));
+
+router.get('/add', (req, res) => {
     res.render('addproduto');
 });
 
-router.post('/addproduto', (req, res) => {
+router.post('/add', (req, res) => {
     let {nome, descricao,preco,imgsource} = req.body;
 
     Produto.create({
@@ -29,9 +36,20 @@ router.post('/addproduto', (req, res) => {
         preco,
         imgsource,
     })
-    .then(() => res.redirect('/verproduto'))
+    .then(() => res.redirect('/produtos'))
     .catch(err => console.log(err));
 });
 
+router.post('/edit/', (req, res) => {
+    let {nome, descricao,preco,imgsource} = req.body;
+    
+    let dados = {nome, descricao, preco, imgsource}; 
+
+    Aluno.update(dados, {where: {id: id}})
+    .then(() =>{
+        res.redirect('/produtos');
+    })
+    .catch(err => {console.log(err)});
+});
 
 module.exports = router;

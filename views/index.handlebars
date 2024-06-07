@@ -5,6 +5,10 @@
 </section>
 </div>
 <section class="carrossel">
+    <div class="teste">
+        AAAAAAAAAAAAAAAA
+
+    </div>
     <div class="container__banner">
         <div class="banner-liz">
 
@@ -22,7 +26,6 @@
 
     <div class="carrossel__container">
         <!-- Slider main container -->
-
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -38,7 +41,8 @@
                                 <p class="produto__preco">R$ 149,90</p>
                             </div>
                             <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
+                                <button class="botao__carrinho" action="/addproduto"><i
+                                        class="botao__icone-carrinho"></i>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -121,86 +125,27 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                {{#each produtosLiz}}
                 <div class="swiper-slide">
                     <div class="container__card">
                         <div class="container__card-imagem">
-                            <img src="./img/carrossel/lily1.webp">
+                            <img src="{{dataValues.imgsource}}">
                         </div>
                         <div class="container__card-preco">
                             <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
+                                <p class="produto__nome">{{dataValues.nome}}</p>
+                                <p class="produto__descricao">{{dataValues.descricao}}</p>
+                                <p class="produto__preco">{{dataValues.preco}}</p>
                             </div>
                             <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
+                                <button class="botao__carrinho" action="/addproduto"><i
+                                        class="botao__icone-carrinho"></i>Comprar</button>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/lily2.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/lily3.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/lily4.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/lily5.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
+                
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

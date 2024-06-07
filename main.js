@@ -30,7 +30,7 @@ db
         console.log('Erro ao conectar', err);
     });
 
-app.use('/', require('./routes/contato.js'));
+app.use('/contato', require('./routes/contato.js'));
 app.use('/', require('./routes/index.js'));
-app.use('/', require('./routes/produtos.js'));
-app.use('/', require('./routes/sobre.js'));
+app.use('/produtos', require('./routes/produtos.js'));
+app.use('/sobre', require('./routes/sobre.js'));
