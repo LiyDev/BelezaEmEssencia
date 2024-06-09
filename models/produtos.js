@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../db/connection');
 
 const Produto = db.define('produtos', {
-    id:{
+    id_produto:{
         type: Sequelize.INTEGER,
         primaryKey: true,
     },

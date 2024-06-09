@@ -5,17 +5,66 @@ const Produto = require('../models/produtos');
 
 //buscando todos os alunos
 router.get("/", (req, res)=>{
+    let produtosLiz = '';
+    let produtosLily = '';
+
     Produto.findAll({
         where: {
             nome: 'Liz',
         },
     })
-    .then(produtosLiz =>{
+    .then(Liz => {
+        produtosLiz = Liz
+    })
+    Produto.findAll({
+        where: {
+            nome: 'Lilly',
+        },
+    })
+    .then(Lily => {
+            produtosLily = Lily
+    });
+    Produto.findAll({
+        where: {
+            nome: 'Coffee',
+        },
+    })
+    .then(produtosCoffee => {
         res.render('index', {
+            produtosLily,
+            produtosCoffee,
             produtosLiz
         });
-    }); 
+    });
+
+    
 });
+
+// router.get("/", (req, res)=>{
+//     Produto.findAll({
+//         where: {
+//             nome: 'Coffee',
+//         },
+//     })
+//     .then(produtosCoffee =>{
+//         res.render('index', {
+//             produtosCoffee
+//         });
+//     }); 
+// });
+
+// router.get("/", (req, res)=>{
+//     Produto.findAll({
+//         where: {
+//             nome: 'Lilly',
+//         },
+//     })
+//     .then(produtosLilly =>{
+//         res.render('index', {
+//             produtosLilly
+//         });
+//     }); 
+// });
 
 router.get('/edit/', (req, res) => {
     let {nome, descricao,preco,imgsource} = req.body;

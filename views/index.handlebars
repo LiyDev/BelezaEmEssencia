@@ -5,10 +5,6 @@
 </section>
 </div>
 <section class="carrossel">
-    <div class="teste">
-        AAAAAAAAAAAAAAAA
-
-    </div>
     <div class="container__banner">
         <div class="banner-liz">
 
@@ -30,71 +26,26 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                {{#each produtosLiz}}
                 <div class="swiper-slide">
                     <div class="container__card">
                         <div class="container__card-imagem">
-                            <img src="./img/carrossel/liz1.webp">
+                            <img src="{{dataValues.imgsource}}">
                         </div>
                         <div class="container__card-preco">
                             <div class="produto__texto">
-                                <p class="produto__nome">Liz Flora</p>
-                                <p class="produto__preco">R$ 149,90</p>
+                                <p class="produto__nome">{{dataValues.nome}}</p>
+                                <p class="produto__descricao">{{dataValues.descricao}}</p>
+                                <p class="produto__preco">R$ {{dataValues.preco}}</p>
                             </div>
                             <div class="produto__icones">
                                 <button class="botao__carrinho" action="/addproduto"><i
                                         class="botao__icone-carrinho"></i>Comprar</button>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/liz2.jpg">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Liz Sublime</p>
-                                <p class="produto__preco">R$ 149,90</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/liz3.jpg">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Liz</p>
-                                <p class="produto__preco">R$ 149,90</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/liz4.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Liz Intenso</p>
-                                <p class="produto__preco">R$ 159,90</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}                
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -125,7 +76,7 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                {{#each produtosLiz}}
+                {{#each produtosLily}}
                 <div class="swiper-slide">
                     <div class="container__card">
                         <div class="container__card-imagem">
@@ -135,7 +86,7 @@
                             <div class="produto__texto">
                                 <p class="produto__nome">{{dataValues.nome}}</p>
                                 <p class="produto__descricao">{{dataValues.descricao}}</p>
-                                <p class="produto__preco">{{dataValues.preco}}</p>
+                                <p class="produto__preco">R$ {{dataValues.preco}}</p>
                             </div>
                             <div class="produto__icones">
                                 <button class="botao__carrinho" action="/addproduto"><i
@@ -175,86 +126,26 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                {{#each produtosCoffee}}
                 <div class="swiper-slide">
                     <div class="container__card">
                         <div class="container__card-imagem">
-                            <img src="./img/carrossel/coffee1.webp">
+                            <img src="{{dataValues.imgsource}}">
                         </div>
                         <div class="container__card-preco">
                             <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
+                                <p class="produto__nome">{{dataValues.nome}}</p>
+                                <p class="produto__descricao">{{dataValues.descricao}}</p>
+                                <p class="produto__preco">R$ {{dataValues.preco}}</p>
                             </div>
                             <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
+                                <button class="botao__carrinho" action="/addproduto"><i
+                                        class="botao__icone-carrinho"></i>Comprar</button>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/coffee2.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/coffee3.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/coffee4.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container__card">
-                        <div class="container__card-imagem">
-                            <img src="./img/carrossel/coffee5.webp">
-                        </div>
-                        <div class="container__card-preco">
-                            <div class="produto__texto">
-                                <p class="produto__nome">Produto</p>
-                                <p class="produto__preco">R$ 39,99</p>
-                            </div>
-                            <div class="produto__icones">
-                                <button class="botao__carrinho"><i class="botao__icone-carrinho"></i>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

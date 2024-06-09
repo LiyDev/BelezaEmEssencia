@@ -1,7 +1,8 @@
 const express = require('express');
 const {engine} = require('express-handlebars');
 const bodyParser = require('body-parser');
-    const db = require('./db/connection');
+const db = require('./db/connection');
+const chalk = require('chalk');
 
 const app = express();
 
@@ -18,16 +19,16 @@ const PORT = 3000;
 app.use(express.static(__dirname + '/public'));
 
 app.listen(PORT, function(){
-    console.log(`Servidor rodando em: http://localhost/${PORT}`);
+    console.log(`Servidor rodando em: ` + chalk.blueBright(`http://localhost:${PORT}`));
 });
 
 db
     .authenticate()
     .then(()=>{
-        console.log('Banco conectado');
+        console.log(chalk.cyanBright("Conectado ao banco de dados."));
     })
     .catch(err => {
-        console.log('Erro ao conectar', err);
+        console.log(chalk.redBright('Erro ao conectar'), err);
     });
 
 app.use('/contato', require('./routes/contato.js'));
