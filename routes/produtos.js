@@ -3,7 +3,6 @@ const router = express.Router();
 const Produto = require('../models/produtos');
 
 
-//buscando todos os alunos
 router.get("/", (req, res)=>{
     Produto.findAll({order:[
         ['nome', 'ASC']
@@ -16,10 +15,10 @@ router.get("/", (req, res)=>{
 });
 
 router.get("/editar/:id", (req, res) => Produto.findOne({
-    where: {id: req.params.id}
-}).then(produto =>{
-    res.render('editarProduto', {
-        produto
+    where: {id_produto: req.params.id}
+}).then(produtos =>{
+    res.render('editarproduto', {
+        produtos
     });
 }).catch(err => console.log(err)));
 
@@ -41,15 +40,25 @@ router.post('/add', (req, res) => {
 });
 
 router.post('/edit/', (req, res) => {
-    let {nome, descricao,preco,imgsource} = req.body;
+    let {id, nome, descricao,preco,imgsource} = req.body;
     
     let dados = {nome, descricao, preco, imgsource}; 
 
-    Aluno.update(dados, {where: {id: id}})
+    Produto.update(dados, {where: {id_produto: id}})
     .then(() =>{
         res.redirect('/produtos');
     })
     .catch(err => {console.log(err)});
 });
+
+router.get('/delete/:id', (req, res) =>{
+    const id = req.params.id;
+    Produto.destroy({where: {id_produto: id}})
+    .then(() =>{
+        res.redirect('/produtos');
+    })
+    .catch(err => {console.log(err)});;
+});
+
 
 module.exports = router;

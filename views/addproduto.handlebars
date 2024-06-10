@@ -1,30 +1,28 @@
-<div class="container__form">
-  <div class="titulo__form">
-    <h3>Cadastrar</h3>
+ <div class="titulo__form">
+    <h3>Cadastrar Produto</h3>
   </div>
 
-
-  <form action="/produtos/add" method="post">
-
-    <div class="form-group">
-      <label for="email" class="labels">Nome:</label>
-      <input type="text" class="form-control" placeholder="Informe o nome" id="nome" name="nome">
-    </div>
-    <div class="form-group">
-      <label for="pwd" class="labels">Descrição:</label>
-      <input type="text" class="form-control" placeholder="Informe a descrição" id="descricao" name="descricao">
-    </div>
-    <div class="form-group">
-      <label for="pwd" class="labels">Preço:</label>
-      <input type="text" class="form-control" placeholder="Informe o preço" id="preco" name="preco">
-    </div>
-    <div class="form-group">
-      <label for="pwd" class="labels">Caminho da imagem:</label>
-      <input type="text" class="form-control" placeholder="img/produtos/{nomeColeção}/nomeColecao1.extensão" id="imgsource" name="imgsource">
-    </div>
-    <div class="button-form">
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </div>
-  </form>
-
-</div>
+<div class="formulario">
+        <form class="form" action="/produtos/add" method="post">
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="nome" required="required" id="nome"/>
+            <label class="label" for="nome">Nome</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="descricao" required="required" id="descricao"/>
+            <label class="label" for="descricao">Descrição</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="preco" required="required" id="preco"/>
+            <label class="label" for="preco">Preço</label>
+          </div>
+           <div class="form-item col-responsive">
+            <input class="input" type="text" name="imgsource" required="required" id="imgsource"/>
+            <label class="label" for="imgsource">Caminho da Imagem</label>
+          </div>
+          <div class="form-item">
+            <input class="botao" type="submit" value="Enviar"/>
+          </div>
+        </form>
+    
+    </div><!--Class Formulario-->

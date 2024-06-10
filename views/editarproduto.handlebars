@@ -1,0 +1,32 @@
+ <div class="titulo__form">
+    <h3>Cadastrar Produto</h3>
+  </div>
+
+<div class="formulario">
+        <form class="form" action="/produtos/edit" method="post">
+        <div class="form-item col-responsive">
+            <input class="input" type="text" name="id" required="required" id="id" value="{{produtos.dataValues.id_produto}}" readonly/>
+            <label class="label" for="nome">ID</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="nome" required="required" id="nome" value="{{produtos.dataValues.nome  }}"/>
+            <label class="label" for="nome">Nome</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="descricao" required="required" id="descricao" value="{{produtos.dataValues.descricao}}"/>
+            <label class="label" for="descricao">Descrição</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="preco" required="required" id="preco" value="{{produtos.dataValues.preco}}"/>
+            <label class="label" for="preco">Preço</label>
+          </div>
+           <div class="form-item col-responsive">
+            <input class="input" type="text" name="imgsource" required="required" id="imgsource" value="{{produtos.dataValues.imgsource}}"/>
+            <label class="label" for="imgsource">Caminho da Imagem</label>
+          </div>
+          <div class="form-item">
+            <input class="botao" type="submit" value="Enviar"/>
+          </div>
+        </form>
+    
+    </div>

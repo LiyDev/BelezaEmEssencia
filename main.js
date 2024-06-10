@@ -35,3 +35,5 @@ app.use('/contato', require('./routes/contato.js'));
 app.use('/', require('./routes/index.js'));
 app.use('/produtos', require('./routes/produtos.js'));
 app.use('/sobre', require('./routes/sobre.js'));
+app.use('/clientes', require('./routes/cliente.js'));
+app.use('/vendas', require('./routes/vendas.js'));
