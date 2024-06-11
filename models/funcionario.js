@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db/connection');
 
+
 const Funcionario = db.define('funcionarios', {
     id_funcionario:{
         type: Sequelize.INTEGER,

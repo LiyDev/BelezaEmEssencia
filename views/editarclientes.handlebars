@@ -1,0 +1,37 @@
+ <div class="titulo__form">
+    <h3>Cadastrar Cliente</h3>
+  </div>
+
+<div class="formulario">
+    
+        <form class="form" action="/clientes/edit" method="post">
+        <div class="form-item col-responsive">
+            <input class="input" type="text" name="id" required="required" id="id" value="{{clientes.dataValues.id_cliente}}" readonly/>
+            <label class="label" for="nome">ID</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="nome" required="required" id="nome" value="{{clientes.dataValues.nome}}"/>
+            <label class="label" for="nome">Nome</label>
+          </div>          
+          <div class="form-item col-responsive">
+            <input class="input" type="date" name="data_nascimento" required="required" id="data_nascimento" value="{{clientes.dataValues.data_nascimento}}"/>
+            <label class="label" for="data_nascimento">Data de nascimento</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="email" required="required" id="email" value="{{clientes.dataValues.email}}"/>
+            <label class="label" for="email">Email</label>
+          </div>
+           <div class="form-item col-responsive">
+            <input class="input" type="text" name="telefone" required="required" id="telefone" value="{{clientes.dataValues.telefone}}"/>
+            <label class="label" for="telefone">Telefone</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" required="required" name="endereco" id="endereco" value="{{clientes.dataValues.endereco}}"/>
+            <label class="label" for="endereco">Endereço</label>
+          </div>
+          <div class="form-item">
+            <input class="botao" type="submit" value="Enviar"/>
+          </div>
+        </form>
+    
+    </div><!--Class Formulario-->

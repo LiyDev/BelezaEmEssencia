@@ -16,9 +16,9 @@ router.get("/", (req, res)=>{
 
 router.get("/editar/:id", (req, res) => Cliente.findOne({
     where: {id_cliente: req.params.id}
-}).then(produtos =>{
+}).then(clientes =>{
     res.render('editarclientes', {
-        produtos
+        clientes
     });
 }).catch(err => console.log(err)));
 
@@ -45,7 +45,7 @@ router.post('/edit/', (req, res) => {
     
     let dados = {nome, data_nascimento, email, telefone, endereco}; 
 
-    Produto.update(dados, {where: {id_cliente: id}})
+    Cliente.update(dados, {where: {id_cliente: id}})
     .then(() =>{
         res.redirect('/clientes');
     })
