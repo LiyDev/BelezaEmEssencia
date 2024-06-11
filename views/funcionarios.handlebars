@@ -25,10 +25,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </head>
 <body>
 <div class="container__adicionar">
-        <a href="/clientes/add" class="botao__adicionar">Adicionar Cliente</a>
+        <a href="/funcionarios/add" class="botao__adicionar">Adicionar Funcionário</a>
 </div>
 
-<h3>Tabela de Clientes</h3>
+<h3>Tabela de Funcionarios</h3>
 
 <div style="overflow-x: auto;">
   <table>
@@ -39,8 +39,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <th>Email</th>
         <th>Telefone</th>
         <th>Endereço</th>
+        <th>Cargo</th>
+
     </tr>
-    {{#each clientes}}
+    {{#each funcionarios}}
     <tr>
         <td>{{dataValues.id_cliente}}</td>
         <td>{{dataValues.nome}}</td>
@@ -48,8 +50,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <td>{{dataValues.email}}</td>
         <td>{{dataValues.telefone}}</td>
         <td>{{dataValues.endereco}}</td>
-        <td><a href="/clientes/editar/{{dataValues.id_cliente}}">Editar</a></td>
-        <td><a href="/clientes/delete/{{dataValues.id_cliente}}">Excluir</a></td>
+        <td>{{dataValues.cargo}}</td>
+        <td><a href="/clientes/editar/{{dataValues.id_funcionario}}">Editar</a></td>
+        <td><a href="/clientes/delete/{{dataValues.id_funcionario}}">Excluir</a></td>
     </tr>
     {{/each}}
   </table>

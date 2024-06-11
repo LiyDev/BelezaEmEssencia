@@ -1,0 +1,37 @@
+ <div class="titulo__form">
+    <h3>Cadastrar Funcionario</h3>
+  </div>
+
+<div class="formulario">
+    
+        <form class="form" action="/funcionarios/add" method="post">
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="nome" required="required" id="nome"/>
+            <label class="label" for="nome">Nome</label>
+          </div>          
+          <div class="form-item col-responsive">
+            <input class="input" type="date" name="data_nascimento" required="required" id="data_nascimento" />
+            <label class="label" for="data_nascimento">Data de nascimento</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="email" required="required" id="email"/>
+            <label class="label" for="email">Email</label>
+          </div>
+           <div class="form-item col-responsive">
+            <input class="input" type="text" name="telefone" required="required" id="telefone"/>
+            <label class="label" for="telefone">Telefone</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" required="required" name="endereco" id="endereco"/>
+            <label class="label" for="endereco">Endereço</label>
+          </div>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" required="required" name="cargo" id="cargo"/>
+            <label class="label" for="cargo">Cargo</label>
+          </div>
+          <div class="form-item">
+            <input class="botao" type="submit" value="Enviar"/>
+          </div>
+        </form>
+    
+    </div><!--Class Formulario-->

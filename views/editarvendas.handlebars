@@ -1,32 +1,28 @@
  <div class="titulo__form">
-    <h3>Cadastrar Vendas</h3>
+    <h3>Editar Venda</h3>
   </div>
 
 <div class="formulario">
-        <form class="form" action="">
+        <form class="form" action="/vendas/edit" method="post">
           <div class="form-item col-responsive">
-            <input class="input" type="text" name="nome" required="required" id="name"/>
-            <label class="label" for="nome">Nome</label>
-          </div>
-          <div class="form-item col-responsive">
-            <input class="input" type="text" name="email" required="required" id="email"/>
-            <label class="label" for="email">Data de nascimento</label>
+            <input class="input" type="text" name="id" required="required" id="id" value="{{vendas.dataValues.id_venda}}" readonly/>
+            <label class="label" for="nome">ID Venda</label>
           </div>
           <div class="form-item col-responsive">
-            <input class="input" type="text" name="email" required="required" id="email"/>
-            <label class="label" for="email">Email</label>
+            <input class="input" type="text" name="id_cliente" required="required" id="id_cliente" value="{{vendas.dataValues.id_cliente}}" readonly/>
+            <label class="label" for="id_cliente">ID Cliente</label>
           </div>
-           <div class="form-item col-responsive">
-            <input class="input" type="text" name="email" required="required" id="email"/>
-            <label class="label" for="email">Telefone</label>
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="id_funcionario" required="required" id="id_funcionario" value="{{vendas.dataValues.id_funcionario}}"/>
+            <label class="label" for="id_funcionario">ID Funcionario</label>
           </div>
-<div class="form-item col-responsive">
-            <input class="input" type="text" required="required"/>
-            <label class="label" for="email">Endereço</label>
+          <div class="form-item col-responsive">
+            <input class="input" type="date" name="data_venda" required="required" id="data_venda" value="{{vendas.dataValues.data_da_venda}}"/>
+            <label class="label" for="data_venda">Data da venda</label>
           </div>
           <div class="form-item">
             <input class="botao" type="submit" value="Enviar"/>
           </div>
         </form>
     
-    </div><!--Class Formulario-->
+    </div>

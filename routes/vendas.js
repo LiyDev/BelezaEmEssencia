@@ -22,27 +22,25 @@ router.get("/editar/:id", (req, res) => Venda.findOne({
 }).catch(err => console.log(err)));
 
 router.get("/add", (req, res)=>{
-    res.render('addvendas');
+    res.render('addvenda');
 });
 
 router.post('/add', (req, res) => {
-    let {nome, data_nascimento, email, telefone, endereco} = req.body;
+    let {id_cliente, id_funcionario, data_da_venda} = req.body;
 
     Venda.create({
-        nome,
-        data_nascimento,
-        email,
-        telefone,
-        endereco
+        id_cliente,
+        id_funcionario,
+        data_da_venda
     })
     .then(() => res.redirect('/vendas'))
     .catch(err => console.log(err));
 });
 
 router.post('/edit/', (req, res) => {
-    let {nome, data_nascimento, email, telefone, endereco} = req.body;
+    let {id_cliente, id_funcionario, data_da_venda} = req.body;
     
-    let dados = {nome, data_nascimento, email, telefone, endereco}; 
+    let dados = {id_cliente, id_funcionario, data_da_venda}; 
 
     Venda.update(dados, {where: {id_venda: id}})
     .then(() =>{
