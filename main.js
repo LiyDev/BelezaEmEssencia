@@ -10,8 +10,11 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.engine('handlebars', engine());
-app.set('view engine', 'handlebars');
+app.engine('handlebars', engine({
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+    },
+  }));app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 const PORT = 3000;

@@ -5,7 +5,7 @@ const Cliente = require('../models/cliente');
 
 router.get("/", (req, res)=>{
     Cliente.findAll({order:[
-        ['nome', 'ASC']
+        ['id_cliente', 'ASC']
     ]})
     .then(clientes =>{
         res.render('clientes', {
@@ -41,11 +41,11 @@ router.post('/add', (req, res) => {
 });
 
 router.post('/edit/', (req, res) => {
-    let {nome, data_nascimento, email, telefone, endereco} = req.body;
+    let {id_cliente, nome, data_nascimento, email, telefone, endereco} = req.body;
     
     let dados = {nome, data_nascimento, email, telefone, endereco}; 
 
-    Cliente.update(dados, {where: {id_cliente: id}})
+    Cliente.update(dados, {where: {id_cliente: id_cliente}})
     .then(() =>{
         res.redirect('/clientes');
     })

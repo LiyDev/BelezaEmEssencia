@@ -42,11 +42,11 @@ router.post('/add', (req, res) => {
 });
 
 router.post('/edit/', (req, res) => {
-    let {nome, data_nascimento, email, telefone, endereco, cargo} = req.body;
+    let {id_funcionario ,nome, data_nascimento, email, telefone, endereco, cargo} = req.body;
     
     let dados = {nome, data_nascimento, email, telefone, endereco, cargo}; 
 
-    Funcionario.update(dados, {where: {id_funcionario: id}})
+    Funcionario.update(dados, {where: {id_funcionario: id_funcionario}})
     .then(() =>{
         res.redirect('/funcionarios');
     })

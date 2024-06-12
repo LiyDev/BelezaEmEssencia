@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+table {
+  border-collapse: inherit;
+  width: 100%;
+  padding: 0 0 5em 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 1.5em;
+}
+
+h3{
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 23px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+</head>
+<body>
+
+<h3>Produtos adicionados na Venda</h3>
+
+<div style="overflow-x: auto;">
+  <table>
+    <tr>
+        <th>ID Venda</th>
+        <th>ID Produto</th>
+        <th>Nome do Produto</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+
+    </tr>
+    {{#each vendas}}
+    <tr>
+        <td>{{dataValues.id_venda}}</td>
+        <td>{{dataValues.id_produto}}</td>
+        <td>{{dataValues.produto.nome}}</td>
+        <td>{{dataValues.produto.descricao}}</td>
+        <td>{{dataValues.produto.preco}}</td>
+    </tr>
+    {{/each}}
+
+     
+  </table>
+</div>
+
+</body>
+</html>

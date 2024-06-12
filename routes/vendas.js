@@ -6,7 +6,8 @@ const Cliente = require('../models/cliente');
 const Produto = require('../models/produtos');
 const VendaProduto = require('../models/venda_has_produtos');
 
-
+Produto.hasMany(VendaProduto, { foreignKey: 'id_produto' });
+VendaProduto.belongsTo(Produto, { foreignKey: 'id_produto' });
 
 
 router.get("/", (req, res)=>{
@@ -48,12 +49,27 @@ router.get("/produto/:id", (req, res) => {
         }).catch(err => console.log(err));
 });
 
+router.get("/produtos/:id", (req,res) =>{
+    const vendasProduto =VendaProduto.findAll({
+    where: {id_venda: req.params.id},
+    include : [{
+        model : Produto,
+        required : true,
+    }],
+    })
+    .then(vendas =>{
+        res.render('produtosvenda', {
+            vendas
+    });
+    }).catch(err => console.log(err));
+
+});
+
 router.post('/produto/add', (req, res) => {
     let {id_venda, id_produto} = req.body;
-
     VendaProduto.create({
-        id_cliente,
-        id_produto,
+        id_venda,
+        id_produto
     })
     .then(() => res.redirect('/vendas'))
     .catch(err => console.log(err));
@@ -97,20 +113,14 @@ router.post('/add', (req, res) => {
     })
     .then(() => res.redirect('/vendas'))
     .catch(err => console.log(err));
-    let id_venda = Venda.findOne({
-        order:[
-            ['id_venda', 'DESC']
-        ]
-    })
-    console.log(id_venda);
 });
 
 router.post('/edit/', (req, res) => {
-    let {id_cliente, id_funcionario, data_da_venda} = req.body;
+    let {id_venda ,id_cliente, id_funcionario, data_da_venda} = req.body;
     
     let dados = {id_cliente, id_funcionario, data_da_venda}; 
 
-    Venda.update(dados, {where: {id_venda: id}})
+    Venda.update(dados, {where: {id_venda: id_venda}})
     .then(() =>{
         res.redirect('/vendas');
     })
@@ -125,5 +135,6 @@ router.get('/delete/:id', (req, res) =>{
     })
     .catch(err => {console.log(err)});;
 });
+
 
 module.exports = router;

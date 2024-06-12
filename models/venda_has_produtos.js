@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../db/connection');
 
-const VendaProduto = db.define('vendas', {
+
+const VendaProduto = db.define('venda_has_produtos', {
     id_venda:{
         type: Sequelize.INTEGER,
     },
@@ -9,4 +10,6 @@ const VendaProduto = db.define('vendas', {
         type: Sequelize.INTEGER,
     }
 });
+
+
 module.exports = VendaProduto;

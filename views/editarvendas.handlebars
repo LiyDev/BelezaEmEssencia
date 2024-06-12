@@ -5,19 +5,19 @@
 <div class="formulario">
         <form class="form" action="/vendas/edit" method="post">
           <div class="form-item col-responsive">
-            <input class="input" type="text" name="id" required="required" id="id" value="{{dataValues.id_venda}}" readonly/>
-            <label class="label" for="nome">ID Venda</label>
+            <input class="input" type="text" name="id_venda" required="required" id="id_venda" value="{{vendas.dataValues.id_venda}}" readonly/>
+            <label class="label" for="id_venda">ID Venda</label>
           </div>
           <div class="form-item col-responsive">
-            <input class="input" type="text" name="id_cliente" required="required" id="id_cliente" value="{{dataValues.id_cliente}}"/>
+            <input class="input" type="text" name="id_cliente" required="required" id="id_cliente" value="{{vendas.dataValues.id_cliente}}"/>
             <label class="label" for="id_cliente">ID Cliente</label>
           </div>
           <div class="form-item col-responsive">
-            <input class="input" type="text" name="id_funcionario" required="required" id="id_funcionario" value="{{dataValues.id_funcionario}}"/>
+            <input class="input" type="text" name="id_funcionario" required="required" id="id_funcionario" value="{{vendas.dataValues.id_funcionario}}"/>
             <label class="label" for="id_funcionario">ID Funcionario</label>
           </div>
           <div class="form-item col-responsive">
-            <input class="input" type="date" name="data_da_venda" required="required" id="data_da_venda" value="{{dataValues.data_da_venda}}"/>
+            <input class="input" type="date" name="data_da_venda" required="required" id="data_da_venda" value="{{vendas.dataValues.data_da_venda}}"/>
             <label class="label" for="data_da_venda">Data da venda</label>
           </div>
           <div class="form-item">
