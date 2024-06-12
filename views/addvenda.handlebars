@@ -6,19 +6,28 @@
         <form class="form" action="/vendas/add" method="post">
           <div class="form-item col-responsive">
             <input class="input" type="text" name="id_cliente" required="required" id="id_cliente">
+            <select name="id_cliente" id="id_cliente">
+              {{#each clientes}}
+              <option value="{{dataValues.id_cliente}}"> {{dataValues.id_cliente}} - {{dataValues.nome}}</option>
+              {{/each}}
+            </select>
             <label class="label" for="id_cliente">ID Cliente</label>
           </div>
           <div class="form-item col-responsive">
             <input class="input" type="text" name="id_funcionario" required="required" id="id_funcionario" />
+            <select name="id_cliente" id="id_cliente">
+              {{#each funcionarios}}
+              <option value="{{dataValues.id_funcionario}}"> {{dataValues.id_funcionario}} - {{dataValues.nome}}</option>
+              {{/each}}
+            </select>
             <label class="label" for="id_funcionario">ID Funcionario</label>
           </div>
           <div class="form-item col-responsive">
-            <input class="input" type="date" name="data_da_venda" required="required" id="data_da_venda"/>
-            <label class="label" for="data_da_venda">Data da venda</label>
+            <input class="input date" type="date" name="data_da_venda" required="required" id="data_da_venda" placeholder="sim"/>
+            <label class="labeldate" for="data_da_venda">Data da venda</label>
           </div>
           <div class="form-item">
             <input class="botao" type="submit" value="Enviar"/>
           </div>
         </form>
-    
     </div>

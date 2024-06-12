@@ -45,9 +45,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <td>{{dataValues.id_funcionario}}</td>
         <td>{{dataValues.data_da_venda}}</td>
         <td><a href="/vendas/editar/{{dataValues.id_venda}}">Editar</a></td>
-        <td><a href="/vendas/delete/{{dataValues.id_venda}}">Excluir</a></td>
+        <td><a href="/vendas/delete/{{dataValues.id_venda}}">Excluir</a></td>  
+        <td><a href="/vendas/produto/{{dataValues.id_venda}}">Adicionar Produto</a></td>  
+
     </tr>
     {{/each}}
+
+     
   </table>
 </div>
 

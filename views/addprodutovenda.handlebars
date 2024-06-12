@@ -1,0 +1,24 @@
+ <div class="titulo__form">
+    <h3>Cadastrar Produto na Venda</h3>
+  </div>
+
+<div class="formulario">
+        <form class="form" action="/vendas/produto/add" method="post">
+          <div class="form-item col-responsive">
+            <input class="input" type="text" name="id_cliente" required="required" id="id_cliente" value="{{vendas.dataValues.id_venda}}" readonly>
+            <label class="label selectlabel" for="id_cliente">ID Venda</label>
+          </div>
+          <div class="form-item col-responsive">
+            <select class="input" name="id_cliente" id="id_cliente">
+              {{#each produtos}}
+              <option value="{{dataValues.id_produto}}"> {{dataValues.id_produto}} - {{dataValues.nome}}</option>
+              {{/each}}
+            </select>
+            <label class="label selectlabel" for="id_funcionario">Produto</label>
+          </div>
+          <div class="form-item">
+            <input class="botao" type="submit" value="Enviar"/>
+          </div>
+        </form>
+    
+    </div>
