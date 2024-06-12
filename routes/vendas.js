@@ -13,13 +13,14 @@ router.get("/", (req, res)=>{
     }); 
 });
 
-router.get("/editar/:id", (req, res) => Venda.findOne({
+router.get("/editar/:id", (req, res) => 
+    Venda.findOne({
     where: {id_venda: req.params.id}
-}).then(vendas =>{
+    }).then(vendas =>{
     res.render('editarvendas', {
         vendas
     });
-}).catch(err => console.log(err)));
+    }).catch(err => console.log(err)));
 
 router.get("/add", (req, res)=>{
     res.render('addvenda');
@@ -35,6 +36,12 @@ router.post('/add', (req, res) => {
     })
     .then(() => res.redirect('/vendas'))
     .catch(err => console.log(err));
+    let id_venda = Venda.findOne({
+        order:[
+            ['id_venda', 'DESC']
+        ]
+    })
+    console.log(id_venda);
 });
 
 router.post('/edit/', (req, res) => {
@@ -57,7 +64,5 @@ router.get('/delete/:id', (req, res) =>{
     })
     .catch(err => {console.log(err)});;
 });
-
-module.exports = router;
 
 module.exports = router;

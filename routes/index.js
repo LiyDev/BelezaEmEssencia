@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Produto = require('../models/produtos');
+const { Op } = require('sequelize');
+
 
 
 //buscando todos os alunos
@@ -10,7 +12,9 @@ router.get("/", (req, res)=>{
 
     Produto.findAll({
         where: {
-            nome: 'Liz',
+            nome: {
+                [Op.like]: '%Liz%'
+            }
         },
     })
     .then(Liz => {
@@ -18,7 +22,9 @@ router.get("/", (req, res)=>{
     })
     Produto.findAll({
         where: {
-            nome: 'Lilly',
+            nome: {
+                [Op.like]: '%Lily%'
+            }
         },
     })
     .then(Lily => {

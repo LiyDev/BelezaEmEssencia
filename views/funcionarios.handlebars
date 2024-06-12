@@ -44,15 +44,15 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     </tr>
     {{#each funcionarios}}
     <tr>
-        <td>{{dataValues.id_cliente}}</td>
+        <td>{{dataValues.id_funcionario}}</td>
         <td>{{dataValues.nome}}</td>
         <td>{{dataValues.data_nascimento}}</td>
         <td>{{dataValues.email}}</td>
         <td>{{dataValues.telefone}}</td>
         <td>{{dataValues.endereco}}</td>
         <td>{{dataValues.cargo}}</td>
-        <td><a href="/clientes/editar/{{dataValues.id_funcionario}}">Editar</a></td>
-        <td><a href="/clientes/delete/{{dataValues.id_funcionario}}">Excluir</a></td>
+        <td><a href="/funcionarios/editar/{{dataValues.id_funcionario}}">Editar</a></td>
+        <td><a href="/funcionarios/delete/{{dataValues.id_funcionario}}">Excluir</a></td>
     </tr>
     {{/each}}
   </table>
