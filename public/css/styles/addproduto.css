@@ -62,3 +62,8 @@ input[type=text], select {
   .btn:hover{
     background-color: #37054d;
   }
+
+  .form-item {
+    display: flex;
+    justify-content: center;
+  }

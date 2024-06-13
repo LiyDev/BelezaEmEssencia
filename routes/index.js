@@ -9,7 +9,7 @@ const { Op } = require('sequelize');
 router.get("/", (req, res)=>{
     let produtosLiz = '';
     let produtosLily = '';
-
+    let produtosCoffee = '';
     Produto.findAll({
         where: {
             nome: {
@@ -19,30 +19,33 @@ router.get("/", (req, res)=>{
     })
     .then(Liz => {
         produtosLiz = Liz
-    })
-    Produto.findAll({
-        where: {
-            nome: {
-                [Op.like]: '%Lily%'
-            }
-        },
-    })
-    .then(Lily => {
-            produtosLily = Lily
-    });
-    Produto.findAll({
-        where: {
-            nome: 'Coffee',
-        },
-    })
-    .then(produtosCoffee => {
-        res.render('index', {
-            produtosLily,
-            produtosCoffee,
-            produtosLiz
+        Produto.findAll({
+            where: {
+                nome: {
+                    [Op.like]: '%Lily%'
+                }
+            },
+        })
+        .then(Lily => {
+                produtosLily = Lily
+                Produto.findAll({
+                    where: {
+                        nome: {
+                            [Op.like]: '%Coffee%'
+                        }
+                    },
+                })
+                .then(coffee => {
+                    produtosCoffee = coffee
+                    res.render('index', {
+                        produtosLily,
+                        produtosCoffee,
+                        produtosLiz
+                    });
+                });
         });
-    });
-
+    })
+    
     
 });
 

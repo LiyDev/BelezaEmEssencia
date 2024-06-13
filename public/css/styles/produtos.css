@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.6);
-    height: 400px;
+    height: 450px;
     width: 70%;
     border: 0.5px solid var(--cor-fonte-principal);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -134,21 +134,29 @@
 
 
 @media screen and (min-width:400px){
+
 }
 
 
 @media screen and (min-width: 768px) {
     .container__produto {
-        height: 300px;
+        height: 430px;
+        width: 40%;
+    }
+
+    .container__produto-texto {
+        display: flex;
+        justify-content: space-between;
     }
 
     .imagens-produtos {
-        height: 170px;
+        height: 230px;
         width: 100%;
     }
 
     .botao__adicionar {
-        width: 35%;
+        width: 30%;
+        height: 45px;
     }
 
 }

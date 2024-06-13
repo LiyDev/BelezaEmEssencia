@@ -99,8 +99,16 @@ input, textarea {
     top: 0em;
     left: 0em;
     text-transform: capitalize;
-
   }
+
+  .selectlabelvenda {
+    position: absolute;
+    top: 0em;
+    left: 2em;
+    text-transform: capitalize;
+  }
+
+  
   .form-item .botao {
     display: block;
     width: 140px;

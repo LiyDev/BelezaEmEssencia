@@ -5,22 +5,20 @@
 <div class="formulario">
         <form class="form" action="/vendas/add" method="post">
           <div class="form-item col-responsive">
-            {{!-- <input class="input" type="text" name="id_cliente" required="required" id="id_cliente"> --}}
+            <label class="selectlabelvenda" for="id_cliente">ID Cliente</label>
             <select name="id_cliente" id="id_cliente">
               {{#each clientes}}
               <option value="{{dataValues.id_cliente}}"> {{dataValues.id_cliente}} - {{dataValues.nome}}</option>
               {{/each}}
             </select>
-            <label class="label" for="id_cliente">ID Cliente</label>
           </div>
           <div class="form-item col-responsive">
-            {{!-- <input class="input" type="text" name="id_funcionario" required="required" id="id_funcionario" /> --}}
+            <label class="selectlabelvenda" for="id_funcionario">ID Funcionario</label>
             <select name="id_funcionario" id="id_funcionario">
               {{#each funcionarios}}
               <option value="{{dataValues.id_funcionario}}"> {{dataValues.id_funcionario}} - {{dataValues.nome}}</option>
               {{/each}}
             </select>
-            <label class="label" for="id_funcionario">ID Funcionario</label>
           </div>
           <div class="form-item col-responsive">
             <input class="input date" type="date" name="data_da_venda" required="required" id="data_da_venda" placeholder="sim"/>
